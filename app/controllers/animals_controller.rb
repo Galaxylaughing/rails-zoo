@@ -29,6 +29,35 @@ class AnimalsController < ApplicationController
     end
   end
   
+  def edit
+    animal_id = get_id
+    @animal = find_by_id(animal_id)
+    
+    if @animal.nil?
+      redirect_to animals_path, flash: { error: "Could not find animal with the id: #{animal_id}" }
+      return
+    end
+  end
+  
+  def update
+    animal_id = get_id
+    @animal = find_by_id(animal_id)
+    
+    if @animal.nil?
+      redirect_to animals_path, flash: { error: "Could not find animal with the id: #{animal_id}" }
+      return
+    elsif params.nil? || params.empty? || params[:animal].nil? || animal_params.empty?
+      head :bad_request
+      return
+    elsif @animal.update(animal_params)
+      redirect_to animal_path(animal_id)
+      return
+    else
+      render :edit
+      return
+    end
+  end
+  
   private
   
   def get_id
