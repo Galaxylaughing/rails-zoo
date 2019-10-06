@@ -6,6 +6,7 @@
     <h3><%= animal.name %></h3>
     <p>species: <%= animal.species %></p>
     <p>age: <%= animal.age %> years old</p>
+    <%= link_to "see more about #{animal.name}", animal_path(animal.id) %>
   </div>
 
 <% end %>
