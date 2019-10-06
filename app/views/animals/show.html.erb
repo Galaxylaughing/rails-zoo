@@ -1,6 +1,7 @@
 <nav>
   <div><%= link_to "home", animals_path %></div>
   <div><%= link_to "edit", edit_animal_path %></div>
+  <div><%= link_to "delete", animal_path(@animal.id), method: :delete, data: {confirm: "Are you sure you want to delete this task?"} %></div>
 </nav>
 
 <h2><%= @animal.name %></h2>
