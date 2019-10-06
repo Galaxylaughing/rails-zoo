@@ -31,4 +31,26 @@ describe AnimalsController do
     end
   end
   
+  describe "create" do
+    it "can add a new animal to the database" do
+      animal_hash = {
+        animal: {
+          name: "Tim",
+          species: "field mouse",
+          age: 1
+        }
+      }
+      
+      expect {
+        post animals_path, params: animal_hash
+      }.must_change 'Animal.count', 1
+      
+      new_animal = Animal.find_by(name: animal_hash[:animal][:name])
+      expect(new_animal.species).must_equal animal_hash[:animal][:species]
+      expect(new_animal.age).must_equal animal_hash[:animal][:age]
+      
+      must_redirect_to animal_path(new_animal.id)
+    end
+  end
+  
 end
