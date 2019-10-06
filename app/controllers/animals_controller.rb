@@ -6,5 +6,10 @@ class AnimalsController < ApplicationController
   def show
     animal_id = params[:id]
     @animal = Animal.find_by(id: animal_id)
+    
+    if @animal.nil?
+      redirect_to animals_path, flash: { error: "Could not find animal with id: #{animal_id}" }
+      return
+    end
   end
 end
