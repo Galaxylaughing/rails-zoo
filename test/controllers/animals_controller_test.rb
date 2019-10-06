@@ -24,4 +24,11 @@ describe AnimalsController do
     end
   end
   
+  describe "new" do
+    it "renders the new animal form" do
+      get new_animal_path
+      must_respond_with :success
+    end
+  end
+  
 end
