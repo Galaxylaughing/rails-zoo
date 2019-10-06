@@ -144,4 +144,33 @@ describe AnimalsController do
     end
   end
   
+  describe "destroy" do
+    
+    it "will remove an animal from the database" do
+      animal = Animal.create(name: "Micky", species: "Turtle", age: 899)
+      
+      expect {
+        delete animal_path(animal.id)
+      }.must_change 'Animal.count', -1
+    end
+    
+    it "will return a 404 for a nonexistent animal" do
+      expect {
+        delete animal_path(-1)
+      }.wont_change 'Animal.count'
+      
+      must_respond_with :not_found
+    end
+    
+    it "will return nil for nonexistent animals" do
+      animal = Animal.create(name: "Micky", species: "Turtle", age: 899)
+      
+      delete animal_path(animal.id)
+      
+      deleted_task = Animal.find_by(id: animal.id)
+      expect(deleted_task).must_be_nil
+    end
+    
+  end
+  
 end

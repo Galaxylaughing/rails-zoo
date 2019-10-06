@@ -58,6 +58,20 @@ class AnimalsController < ApplicationController
     end
   end
   
+  def destroy
+    animal_id = get_id
+    @animal = find_by_id(animal_id)
+    
+    if @animal.nil?
+      head :not_found
+      return
+    else
+      @animal.destroy
+      redirect_to animals_path
+      return
+    end
+  end
+  
   private
   
   def get_id
