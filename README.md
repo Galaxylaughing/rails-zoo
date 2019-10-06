@@ -25,6 +25,7 @@ Each requirements section of this assignment has three sections: **think, create
 1. a new model (migration) with the name `animal`
     - each animal shall have a `name`, `species` and an `age` (add any other fields you want to track about the animals)
     - i.e. Georgia is a Lion  who is 4 years old
+    - `$ rails generate model animal name:string species:string age:integer`
 1. create the schema from the migration by running `rails db:migrate`
 
 **Verify**:
