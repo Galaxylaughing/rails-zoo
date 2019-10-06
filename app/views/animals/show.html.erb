@@ -9,4 +9,5 @@
 <div>
   <p>Species: <%= @animal.species %></p>
   <p>Age: <%= @animal.age %> years old</p>
+  <%= image_tag @animal.image, alt: @animal.species %>
 </div>
