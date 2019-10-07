@@ -1,16 +1,19 @@
-<h2>Animals</h2>
-
 <nav>
+  <h2>All Animals</h2>
   <div><%= link_to "add", new_animal_path %></div>
 </nav>
 
-<% @animals.each do |animal| %>
+<div class="animal-container">
+  <% @animals.each do |animal| %>
 
-  <div>
-    <h3><%= animal.name %></h3>
-    <p>species: <%= animal.species %></p>
-    <p>age: <%= animal.age %> years old</p>
-    <%= link_to "see more about #{animal.name}", animal_path(animal.id) %>
-  </div>
+    <div>
+      <div class="animal-info-sheet">
+        <%= link_to image_tag(animal.image, alt: animal.species), animal_path(animal.id) %>
+        <h3><%= animal.name %></h3>
+        <p>species: <%= animal.species %></p>
+        <p>age: <%= animal.age %> years old</p>
+      </div>
+    </div>
 
-<% end %>
+  <% end %>
+</div>

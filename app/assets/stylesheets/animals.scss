@@ -1,3 +1,227 @@
 // Place all the styles related to the Animals controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$font: 'Work Sans', Arial, Helvetica, sans-serif;
+
+$blue: #3c92e8;
+$darkblue: #125393;
+
+body {
+  font-family: $font;
+  background-color: whitesmoke;
+}
+
+img {
+  width: 50rem;
+  border-radius: 2rem;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+input[type=text], input[type=number] {
+  font-family: $font;
+  font-size: 1em;
+  background-color: whitesmoke;
+  padding: 0.5em;
+}
+
+
+// HEADER
+
+header h1 {
+  padding: 1rem;
+  margin-bottom: 0;
+  margin-top: 0;
+  width: max-content;
+  color: $darkblue;
+}
+
+header h1:hover {
+  background-color: lightgreen;
+}
+
+header h1 a:active {
+  color: whitesmoke;
+}
+
+header h1:active {
+  background-color: darkgreen;
+}
+
+
+// NAV
+
+main nav {
+  width: 100%;
+  height: min-content;
+  background-color: green;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  justify-content: flex-end;
+  align-items: center;
+}
+
+main nav > h2 {
+  font-weight: 400;
+  font-size: 1.3em;
+  margin: 0;
+  margin-right: auto;
+  color: whitesmoke;
+}
+
+main nav > * {
+  padding: 1rem;
+}
+
+main nav a {
+  color: whitesmoke;
+}
+
+main nav > * {
+  line-height: 1rem;
+}
+
+main nav > *:not(:first-child):hover {
+  background-color: darkgreen;
+}
+
+main nav > *:not(:first-child):active {
+  background-color: lightgreen;
+}
+
+main nav > *:not(:first-child) a:active {
+  color: black;
+  font-weight: bold;
+}
+
+// DISPLAY PAGES
+
+main > div {
+  margin-top: 1rem;
+}
+
+
+// INDEX
+
+.animal-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.animal-container > div {
+  background-color: $blue;
+  margin: 1rem;
+}
+
+.animal-info-sheet {
+  padding: 2rem;
+  margin: 0.3rem;
+
+  width: 25rem;
+  
+  background-color: lightgreen;
+}
+
+.animal-container img {
+  width: 10rem;
+  float: right;
+
+  box-shadow: 0 0.1rem 0.1rem rgba(0, 0, 0, 0.9);
+}
+
+.animal-container img:hover {
+  cursor: pointer;
+}
+
+
+// SHOW
+
+.animal-details {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.animal-details > div {
+  background-color: $blue;
+  margin: 3rem;
+}
+
+.animal-details > div > div {
+  background-color: lightgreen;
+
+  padding: 4rem;
+  margin: 1rem;
+}
+
+.animal-details > img {
+  margin: 2rem;
+}
+
+
+// NEW
+
+.form-page {
+  width: 90%;
+  margin: auto;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+
+  padding: 1rem;
+}
+
+.form-page section {
+  padding: 2rem;
+  margin: 1rem;
+  background-color: lightgreen;
+}
+
+.animal-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.animal-form > * {
+  display: block;
+  margin: 1rem;
+}
+
+.animal-form > *:last-child {
+  margin-top: 2rem;
+}
+
+.submit-button {
+  padding: 1.5rem;
+  font-size: 1.2em;
+  background-color: $blue;
+  border: none;
+  border-radius: 3rem;
+
+  box-shadow: inset 0 0.2rem 0 rgba(128,184,240,0.5), 0 0.2rem 0.2rem rgba(15,70,125,0.2);
+}
+
+.submit-button:hover {
+  cursor: pointer;
+  background-color: $darkblue;
+  color: whitesmoke;
+  font-weight: bold;
+  border: none;
+}

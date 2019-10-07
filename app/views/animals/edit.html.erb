@@ -1,24 +1,29 @@
-<h2>Update Animal Details</h2>
+<nav>
+  <h2>Update Animals Details</h2>
+  <div><%= link_to "home", animals_path %></div>
+</nav>
 
-<section class="current">
-  <h3>Current Animal Information</h3>
+<div class="form-page">
+  <section class="current">
+    <h3>Current Animal Information</h3>
 
-  <div>
-    <span>Name:</span>
-    <span><%= @animal.name %></span>
-  </div>
+    <div>
+      <span>Name:</span>
+      <span><%= @animal.name %></span>
+    </div>
 
-  <div>
-    <span>Species:</span>
-    <span><%= @animal.species %></span>
-  </div>
+    <div>
+      <span>Species:</span>
+      <span><%= @animal.species %></span>
+    </div>
 
-  <div>
-    <span>Age:</span>
-    <span><%= @animal.age %></span>
-  </div>
-</section>
+    <div>
+      <span>Age:</span>
+      <span><%= @animal.age %></span>
+    </div>
+  </section>
 
-<section class="form-container">
-  <%= render partial: "form", locals: { action_name: "Update", message: "update this" } %>
-</section>
+  <section class="form-container">
+    <%= render partial: "form", locals: { action_name: "Update", message: "update this" } %>
+  </section>
+</div>

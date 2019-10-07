@@ -1,5 +1,10 @@
-<h2>Add New Animal</h2>
+<nav>
+  <h2>Add New Animal</h2>
+  <div><%= link_to "return to index", animals_path %></div>
+</nav>
 
-<section class="form-container">
-  <%= render partial: "form", locals: { action_name: "Add", message: "add a" } %>
-</section>
+<div class="form-page">
+  <section class="form-container">
+    <%= render partial: "form", locals: { action_name: "Add", message: "add a" } %>
+  </section>
+</div>

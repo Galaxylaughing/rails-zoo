@@ -7,11 +7,13 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,700&display=swap" rel="stylesheet">
   </head>
 
   <body>
     <header>
-      <h1>Rails Zoo</h1>
+      <h1><%= link_to "Rails Zoo", animals_path %></h1>
     </header>
     <main>
       <%= yield %>

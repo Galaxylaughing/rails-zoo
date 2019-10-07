@@ -10,5 +10,8 @@
   <%= f.label :age %>
   <%= f.number_field(:age, min: 0, step: 1) %>
 
+  <%= f.label :image %>
+  <%= f.text_field :image %>
+
   <%= f.submit "#{action_name} Animal", class: "submit-button" %>
 <% end %>
