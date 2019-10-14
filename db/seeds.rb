@@ -46,7 +46,7 @@ animals = [
 ]
 
 animal_failures = []
-animals.each do |task|
+animals.each do |animal|
   new_animal = Animal.new
   new_animal.name = animal[:name]
   new_animal.species = animal[:species]
